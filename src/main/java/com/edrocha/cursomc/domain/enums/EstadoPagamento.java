@@ -1,14 +1,15 @@
 package com.edrocha.cursomc.domain.enums;
 
-public enum TipoCliente {
-
-	PESSOAFISICA(1, "Pessoa Fisíca"), 
-	PESSOAJURIDICA(2, "Pessoa Jurídica");
-
+public enum EstadoPagamento {
+	
+	PENDENTE(1, "Pendente"),
+	QUITADO(2, "Quitado"),
+	CANCELADO(3, "Cancelado");
+	
 	private int code;
 	private String descricao;
-
-	private TipoCliente(int code, String descricao) {
+	
+	private EstadoPagamento(int code, String descricao) {
 		this.code = code;
 		this.descricao = descricao;
 	}
@@ -20,14 +21,14 @@ public enum TipoCliente {
 	public String getDescricao() {
 		return descricao;
 	}
-
-	public static TipoCliente toEnum(Integer code) {
+	
+	public static EstadoPagamento toEnum(Integer code) {
 
 		if (code == null) {
 			return null;
 		}
 
-		for (TipoCliente x : TipoCliente.values()) {
+		for (EstadoPagamento x : EstadoPagamento.values()) {
 			if (code.equals(x.getCode())) {
 				return x;
 			}
