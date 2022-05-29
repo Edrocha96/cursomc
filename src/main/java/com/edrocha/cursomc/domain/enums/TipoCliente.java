@@ -22,7 +22,6 @@ public enum TipoCliente {
 	}
 
 	public static TipoCliente toEnum(Integer code) {
-
 		if (code == null) {
 			return null;
 		}

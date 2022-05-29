@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import com.edrocha.cursomc.domain.Categoria;
 import com.edrocha.cursomc.dto.CategoriaDTO;
 import com.edrocha.cursomc.repositories.CategoriaRepository;
+import com.edrocha.cursomc.repositories.EnderecoRepository;
 import com.edrocha.cursomc.services.exceptions.DataIntegrityException;
 import com.edrocha.cursomc.services.exceptions.ObjectNotFoundException;
 
@@ -21,7 +22,7 @@ public class CategoriaService {
 
 	@Autowired
 	private CategoriaRepository repository;
-
+	
 	public Categoria find(Integer id) {
 		Optional<Categoria> obj = repository.findById(id);
 		return obj.orElseThrow(() -> new ObjectNotFoundException(
